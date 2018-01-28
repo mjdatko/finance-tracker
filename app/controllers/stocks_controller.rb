@@ -5,7 +5,7 @@ class StocksController < ApplicationController
     else
       @stock = Stock.new_from_lookup(params[:stock])
       flash.now[:danger] = "You have entered and incorrect symbol" unless @stock
-     end  
+    end  
        respond_to do |format|
         format.js {render partial: 'users/result'}      
     end
